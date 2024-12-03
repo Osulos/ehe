@@ -8,5 +8,5 @@ namespace ehe.DosyaUrunler.Forms;
 public class UrunCesitleriForm
 {
     public string Ad { get; set; }
-
+    public string ShortName { get; set; }
 }

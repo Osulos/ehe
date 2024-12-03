@@ -1,5 +1,4 @@
-﻿export * from "./DosyaUrunler/ReduceStockRequest"
-export * from "./DosyaUrunler/UrunCesitleriColumns"
+﻿export * from "./DosyaUrunler/UrunCesitleriColumns"
 export * from "./DosyaUrunler/UrunCesitleriForm"
 export * from "./DosyaUrunler/UrunCesitleriRow"
 export * from "./DosyaUrunler/UrunCesitleriService"

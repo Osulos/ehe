@@ -16,7 +16,7 @@ public class UrunEklemeColumns
     [EditLink]
     public int UrunFiyati { get; set; }
     [EditLink]
-    public int UrunKodu { get; set; }
+    public string UrunKodu { get; set; }
 
     [QuickFilter, EditLink]
     public string UrunCesitleriidAd { get; set; }

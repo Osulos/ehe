@@ -35,8 +35,8 @@ public sealed class UrunlerRow : Row<UrunlerRow.RowFields>, IIdRow, INameRow
     [DisplayName("Urun Fiyati"), NotNull, ReadOnly(true)]
     public int? UrunFiyati { get => fields.UrunFiyati[this]; set => fields.UrunFiyati[this] = value; }
 
-    [DisplayName("Urun Kodu"), NotNull, ReadOnly(true)]
-    public int? UrunKodu { get => fields.UrunKodu[this]; set => fields.UrunKodu[this] = value; }
+    [DisplayName("Urun Kodu"), ReadOnly(true)]
+    public string UrunKodu { get => fields.UrunKodu[this]; set => fields.UrunKodu[this] = value; }
 
     [DisplayName("Urun Cinsi"), ForeignKey("UrunCesitleri", "UrunCesitleriid"), LeftJoin(jUrunCesitleriid), ReadOnly(true)]
     [LookupEditor(typeof(UrunCesitleriRow), DialogType = "DosyaUrunler.UrunCesitleri")]
@@ -53,7 +53,7 @@ public sealed class UrunlerRow : Row<UrunlerRow.RowFields>, IIdRow, INameRow
         public StringField UrunAciklamasi;
         public Int32Field UrunStokAdeti;
         public Int32Field UrunFiyati;
-        public Int32Field UrunKodu;
+        public StringField UrunKodu;
         public Int32Field UrunCesitleriid;
         public StringField UrunCesitleriidAd;
     }

@@ -7,8 +7,9 @@ export interface UrunEklemeForm {
     UrunAciklamasi: StringEditor;
     UrunStokAdeti: IntegerEditor;
     UrunFiyati: IntegerEditor;
-    UrunKodu: IntegerEditor;
+    UrunKodu: StringEditor;
     UrunCesitleriid: LookupEditor;
+    UrunCesitleriShortName: StringEditor;
     UrunYeniGrid: UrunYeniGrid;
 }
 
@@ -32,8 +33,9 @@ export class UrunEklemeForm extends PrefixedContext {
                 'UrunAciklamasi', w0,
                 'UrunStokAdeti', w1,
                 'UrunFiyati', w1,
-                'UrunKodu', w1,
+                'UrunKodu', w0,
                 'UrunCesitleriid', w2,
+                'UrunCesitleriShortName', w0,
                 'UrunYeniGrid', w3
             ]);
         }

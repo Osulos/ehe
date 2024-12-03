@@ -1,5 +1,4 @@
-﻿import { SaveRequest, SaveResponse, ServiceOptions, DeleteRequest, DeleteResponse, RetrieveRequest, RetrieveResponse, ListRequest, ListResponse, ServiceResponse, serviceRequest } from "@serenity-is/corelib";
-import { ReduceStockRequest } from "./ReduceStockRequest";
+﻿import { SaveRequest, SaveResponse, ServiceOptions, DeleteRequest, DeleteResponse, RetrieveRequest, RetrieveResponse, ListRequest, ListResponse, serviceRequest } from "@serenity-is/corelib";
 import { UrunlerRow } from "./UrunlerRow";
 
 export namespace UrunlerService {
@@ -10,15 +9,13 @@ export namespace UrunlerService {
     export declare function Delete(request: DeleteRequest, onSuccess?: (response: DeleteResponse) => void, opt?: ServiceOptions<any>): PromiseLike<DeleteResponse>;
     export declare function Retrieve(request: RetrieveRequest, onSuccess?: (response: RetrieveResponse<UrunlerRow>) => void, opt?: ServiceOptions<any>): PromiseLike<RetrieveResponse<UrunlerRow>>;
     export declare function List(request: ListRequest, onSuccess?: (response: ListResponse<UrunlerRow>) => void, opt?: ServiceOptions<any>): PromiseLike<ListResponse<UrunlerRow>>;
-    export declare function AzaltStok(request: ReduceStockRequest, onSuccess?: (response: ServiceResponse) => void, opt?: ServiceOptions<any>): PromiseLike<ServiceResponse>;
 
     export const Methods = {
         Create: "DosyaUrunler/Urunler/Create",
         Update: "DosyaUrunler/Urunler/Update",
         Delete: "DosyaUrunler/Urunler/Delete",
         Retrieve: "DosyaUrunler/Urunler/Retrieve",
-        List: "DosyaUrunler/Urunler/List",
-        AzaltStok: "DosyaUrunler/Urunler/AzaltStok"
+        List: "DosyaUrunler/Urunler/List"
     } as const;
 
     [
@@ -26,8 +23,7 @@ export namespace UrunlerService {
         'Update', 
         'Delete', 
         'Retrieve', 
-        'List', 
-        'AzaltStok'
+        'List'
     ].forEach(x => {
         (<any>UrunlerService)[x] = function (r, s, o) {
             return serviceRequest(baseUrl + '/' + x, r, s, o);

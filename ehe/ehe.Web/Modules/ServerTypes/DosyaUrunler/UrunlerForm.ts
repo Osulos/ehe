@@ -5,9 +5,9 @@ import { UrunYeniGrid } from "../../DosyaUrunler/Urunler/UrunYeniGrid";
 export interface UrunlerForm {
     UrunAdi: StringEditor;
     UrunAciklamasi: StringEditor;
-    UrunStokAdeti: IntegerEditor;
+    UrunStokAdeti: StringEditor;
     UrunFiyati: IntegerEditor;
-    UrunKodu: IntegerEditor;
+    UrunKodu: StringEditor;
     UrunCesitleriid: LookupEditor;
     UrunYeniGrid: UrunYeniGrid;
 }
@@ -30,9 +30,9 @@ export class UrunlerForm extends PrefixedContext {
             initFormType(UrunlerForm, [
                 'UrunAdi', w0,
                 'UrunAciklamasi', w0,
-                'UrunStokAdeti', w1,
+                'UrunStokAdeti', w0,
                 'UrunFiyati', w1,
-                'UrunKodu', w1,
+                'UrunKodu', w0,
                 'UrunCesitleriid', w2,
                 'UrunYeniGrid', w3
             ]);

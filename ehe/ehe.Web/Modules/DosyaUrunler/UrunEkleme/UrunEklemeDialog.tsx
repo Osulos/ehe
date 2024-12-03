@@ -1,5 +1,5 @@
 import { Decorators, EntityDialog } from '@serenity-is/corelib';
-import { UrunEklemeForm, UrunEklemeRow, UrunEklemeService } from '../../ServerTypes/DosyaUrunler';
+import { UrunCesitleriRow, UrunEklemeForm, UrunEklemeRow, UrunEklemeService } from '../../ServerTypes/DosyaUrunler';
 
 @Decorators.registerClass('ehe.DosyaUrunler.UrunEklemeDialog')
 export class UrunEklemeDialog extends EntityDialog<UrunEklemeRow, any> {
@@ -9,6 +9,15 @@ export class UrunEklemeDialog extends EntityDialog<UrunEklemeRow, any> {
 
     protected form = new UrunEklemeForm(this.idPrefix);
 
+    constructor() {
+        super();
+
+        this.form.UrunCesitleriid.changeSelect2(e => {
+            if (this.form.UrunCesitleriid.selectedItem) {
+                this.form.UrunCesitleriShortName.value = (this.form.UrunCesitleriid.selectedItem as UrunCesitleriRow).ShortName;
+            }
+        });
+    }
 
 
     protected afterLoadEntity() {

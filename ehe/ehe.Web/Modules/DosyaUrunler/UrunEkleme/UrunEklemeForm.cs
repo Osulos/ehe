@@ -10,8 +10,12 @@ public class UrunEklemeForm
     public string UrunAciklamasi { get; set; }
     public int UrunStokAdeti { get; set; }
     public int UrunFiyati { get; set; }
-    public int UrunKodu { get; set; }
+    public string UrunKodu { get; set; }
     public int UrunCesitleriid { get; set; }
+
+
+    [Visible(false)]
+    public string UrunCesitleriShortName { get; set; }
 
     [IgnoreName, UrunYeniGrid]
     public string UrunYeniGrid { get; set; }

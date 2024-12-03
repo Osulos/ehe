@@ -15,7 +15,9 @@ public class UrunlerSaveHandler : SaveRequestHandler<MyRow, MyRequest, MyRespons
     {
     }
 
+    protected override void BeforeSave()
+    {
+        base.BeforeSave();
+    }
 
-
-    
 }

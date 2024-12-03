@@ -46,6 +46,18 @@ public class UrunEklemeSaveHandler : SaveRequestHandler<MyRow, MyRequest, MyResp
                     Entity = urunlerRow
                 });
             Row.UrunlerId = Convert.ToInt32(urunlerRepository.EntityId);
+
+            if (Row.UrunKodu is null)
+            {
+                var prefix = Row.UrunCesitleriShortName + "-" + DateTime.Now.ToString("yyMM");
+                var k = new GetNextNumberRequest
+                {
+                    Length = prefix.Length + 5,
+                    Prefix = prefix
+                };
+
+                Row.UrunKodu = GetNextNumberHelper.GetNextNumber(UnitOfWork.Connection, k, MyRow.Fields.UrunKodu).Serial;
+            }
         }
 
         else if (this.IsUpdate)

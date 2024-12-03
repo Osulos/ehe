@@ -33,8 +33,8 @@ public sealed class UrunEklemeRow : Row<UrunEklemeRow.RowFields>, IIdRow, INameR
     [DisplayName("Urun Fiyati"), NotNull]
     public int? UrunFiyati { get => fields.UrunFiyati[this]; set => fields.UrunFiyati[this] = value; }
 
-    [DisplayName("Urun Kodu"), NotNull]
-    public int? UrunKodu { get => fields.UrunKodu[this]; set => fields.UrunKodu[this] = value; }
+    [DisplayName("Urun Kodu")]
+    public string UrunKodu { get => fields.UrunKodu[this]; set => fields.UrunKodu[this] = value; }
 
 
     [DisplayName("Urun Cinsi"), ForeignKey("UrunCesitleri", "UrunCesitleriid"), LeftJoin(jUrunCesitleriid)]
@@ -46,6 +46,9 @@ public sealed class UrunEklemeRow : Row<UrunEklemeRow.RowFields>, IIdRow, INameR
     [DisplayName("Urun Cinsleri"), Expression($"{jUrunCesitleriid}.[Ad]")]
     public string UrunCesitleriidAd { get => fields.UrunCesitleriidAd[this]; set => fields.UrunCesitleriidAd[this] = value; }
 
+    [DisplayName("Kısa Ad"), Expression($"{jUrunCesitleriid}.[ShortName]"),MinSelectLevel(SelectLevel.Always)]
+    public string UrunCesitleriShortName { get => fields.UrunCesitleriShortName[this]; set => fields.UrunCesitleriShortName[this] = value; }
+
     public class RowFields : RowFieldsBase
     {
         public Int32Field Id;
@@ -54,8 +57,9 @@ public sealed class UrunEklemeRow : Row<UrunEklemeRow.RowFields>, IIdRow, INameR
         public StringField UrunAciklamasi;
         public Int32Field UrunStokAdeti;
         public Int32Field UrunFiyati;
-        public Int32Field UrunKodu;
+        public StringField UrunKodu;
         public Int32Field UrunCesitleriid;
         public StringField UrunCesitleriidAd;
+        public StringField UrunCesitleriShortName;
     }
 }

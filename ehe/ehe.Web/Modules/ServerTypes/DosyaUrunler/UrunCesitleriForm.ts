@@ -2,6 +2,7 @@
 
 export interface UrunCesitleriForm {
     Ad: StringEditor;
+    ShortName: StringEditor;
 }
 
 export class UrunCesitleriForm extends PrefixedContext {
@@ -17,7 +18,8 @@ export class UrunCesitleriForm extends PrefixedContext {
             var w0 = StringEditor;
 
             initFormType(UrunCesitleriForm, [
-                'Ad', w0
+                'Ad', w0,
+                'ShortName', w0
             ]);
         }
     }

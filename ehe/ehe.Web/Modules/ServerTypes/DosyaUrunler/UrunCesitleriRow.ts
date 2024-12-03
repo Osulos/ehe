@@ -3,6 +3,7 @@
 export interface UrunCesitleriRow {
     UrunCesitleriid?: number;
     Ad?: string;
+    ShortName?: string;
 }
 
 export abstract class UrunCesitleriRow {

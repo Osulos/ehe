@@ -79,6 +79,7 @@ namespace texts {
 
             namespace UrunCesitleri {
                 export const Ad: string;
+                export const ShortName: string;
                 export const UrunCesitleriid: string;
             }
 
@@ -86,6 +87,7 @@ namespace texts {
                 export const Id: string;
                 export const UrunAciklamasi: string;
                 export const UrunAdi: string;
+                export const UrunCesitleriShortName: string;
                 export const UrunCesitleriid: string;
                 export const UrunCesitleriidAd: string;
                 export const UrunFiyati: string;

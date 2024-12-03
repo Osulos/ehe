@@ -67,26 +67,26 @@ public class UrunlerEndpoint : ServiceEndpoint
 
 
     
-    [HttpPost, Authorize]
-    public ServiceResponse AzaltStok(IDbConnection connection, ReduceStockRequest request)
-    {
-    var urun = connection.ById<UrunlerRow>(request.UrunlerId);
-    if (urun == null)
-    throw new ValidationError("Geçersiz ürün ID");
+    //[HttpPost, Authorize]
+    //public ServiceResponse AzaltStok(IDbConnection connection, ReduceStockRequest request)
+    //{
+    //var urun = connection.ById<UrunlerRow>(request.UrunlerId);
+    //if (urun == null)
+    //throw new ValidationError("Geçersiz ürün ID");
 
-    if (urun.UrunStokAdeti < request.Miktar)
-    throw new ValidationError("Yeterli stok yok");
+    //if (urun.UrunStokAdeti < request.Miktar)
+    //throw new ValidationError("Yeterli stok yok");
 
-    urun.UrunStokAdeti -= request.Miktar;
-    connection.UpdateById(urun);
+    //urun.UrunStokAdeti -= request.Miktar;
+    //connection.UpdateById(urun);
 
-    return new ServiceResponse();
+    //return new ServiceResponse();
     
-    }
+    //}
 
-    public class ReduceStockRequest : ServiceRequest
-    {
-    public int UrunlerId { get; set; }
-    public int Miktar { get; set; }
-    }
+    //public class ReduceStockRequest : ServiceRequest
+    //{
+    //public int UrunlerId { get; set; }
+    //public int Miktar { get; set; }
+    //}
 }

@@ -6,7 +6,7 @@ export interface UrunlerRow {
     UrunAciklamasi?: string;
     UrunStokAdeti?: number;
     UrunFiyati?: number;
-    UrunKodu?: number;
+    UrunKodu?: string;
     UrunCesitleriid?: number;
     UrunCesitleriidAd?: string;
 }
